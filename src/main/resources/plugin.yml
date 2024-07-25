@@ -1,0 +1,6 @@
+name: Enxada_Homes
+version: '${version}'
+main: com.enxadahost.teste.naurzera.enxada_homes.Enxada_Homes
+api-version: 1.21
+authors: [ Naur ]
+description: A simple home plugin made for EnxadaHost
