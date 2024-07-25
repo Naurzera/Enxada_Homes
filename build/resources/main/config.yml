@@ -1,0 +1,92 @@
+storage:
+  # mysql is the only type for now
+  type: mysql
+  mysql:
+    # ip:port
+    hostname: 'localhost:3306'
+    database: 'minecraft'
+    username: 'root'
+    password: '1234567800'
+
+settings:
+  debug: false
+  commands:
+    sethome: "sethome,setarhome"
+    home: "home,homes,casa,casas"
+    delhome: "delhome,deletarhome,apagarhome,tirarhome"
+    setpublic: "setpublic,publica"
+    setprivate: "setprivate,privada"
+    toggleprivacity: "hometoggle,togglepublic"
+    reload: "reloadhomes,homesreload"
+
+  # Permission to reload the plugins
+  reload-permission: "enxada.admin"
+  # Permission to set the home of other player as public or private
+  set-public-private-others: "enxada.admin"
+  # Permission to visit a home event if it's not public
+  public-exempt-permission: "enxada.admin"
+  # Permission to delete the home of other player
+  delete-other-homes: "enxada.admin"
+
+  # Cooldown is the time between the player can use the home command again
+  cooldown:
+    # in seconds
+    default: 15
+    permissions:
+      # the '_' are '.', like "enxada_vip" is the same as the permission "enxada.vip"
+      enxada_vip: 10
+      enxada_vipmelhor: 5
+      enxada_admin: 0
+
+  # Delay is the time that the player needs to wait before teleport
+  delay:
+    default: 5
+    permissions:
+      enxada_vip: 2
+      enxada_vipmelhor: 1
+      enxada_admin: 0
+
+  # The limit of homes that the player can own
+  limit:
+    default: 2
+    permissions:
+      enxada_vip: 3
+      enxada_vipmelhor: 5
+      enxada_admin: -1
+  teleport:
+    movement-cancel:
+      enable: true
+      distance-to-cancel: 1
+    sound: ENTITY_PLAYER_TELEPORT
+    particles: MOBSPAWNER_FLAMES
+    message:
+      - ''
+      - '&e Você foi teleportado para &f{home} &ede &f{player}'
+      - ''
+    title: '&eVisitando &b{player}'
+    subtitle: '&eHome &b[{home}]'
+
+messages:
+  public: "pública"
+  private: "privada"
+  moved: "&c Você se moveu! Teleporte cancelado."
+  cooldown: "&c Opa! Aguarde {time} segundos para usar este comando novamente."
+  teleporting: "&eVocê será teleportado em &f{time} &esegundos... Não se mova!"
+  home-limit: "&cInfelizmente você esgotou seu máximo de homes &f{amount} &c=("
+  no-home-name: "&cEspecifíque o nome da sua home! &f/sethome (nome)"
+  already-have: "&c Opa! Você já tem uma home com o nome &f{home}&c."
+  defined: "&a Oba! Você definiu com sucesso a home &f&l{home}&a!"
+  not-found: "&c Opa! Não encontramos uma home chamada &f{home}&c."
+  not-public: "&c Opa! A home &f{home} &cdo jogador &f{player} &cnão é pública."
+  no-permission-change: "&c Opa! Você não tem permissão para alterar isso."
+  no-permission: "&c Opa! Você não tem permissão para fazer isso."
+  already-public: "&c Opa! A home {home} já é pública!"
+  already-private: "&c Opa! A home {home} já é privada!"
+  public-defined: "&a Sucesso! A home {home} foi definida com pública."
+  private-defined: "&a Sucesso! A home {home} foi definida com privada."
+  toggle-privacity: "&a Sucesso! Agora a home {home} é {privacity}."
+  deleted: "&a Sucesso! A home {home} de {player} foi deletada."
+  hover-homes:
+    - ''
+    - ' &7Clique para visitar a home &e{home}'
+    - ''
