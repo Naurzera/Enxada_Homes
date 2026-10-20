@@ -64,10 +64,9 @@ public class EnxadaHome
       this.location = player.getLocation();
    }
 
-   public boolean togglePrivacity()
+   public void togglePrivacy()
    {
       this.isPublic = !this.isPublic;
-      return this.isPublic;
    }
 
 }

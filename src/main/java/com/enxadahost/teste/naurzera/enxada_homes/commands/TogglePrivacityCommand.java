@@ -62,7 +62,7 @@ public class TogglePrivacityCommand
             }
 
             // Alterando a privadidade
-            home.togglePrivacity();
+            home.togglePrivacy();
 
             // Criando a palavra "publica" ou "privada" a partir da config e da nova privacidade da home
             String privacity = home.isPublic ? Enxada_Homes.getInstance()
